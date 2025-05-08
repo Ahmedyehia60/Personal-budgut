@@ -1,18 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="2efd800f-780f-4083-8e0d-492357fe8c29" name="Changes" comment="" />
+    <list default="true" id="2efd800f-780f-4083-8e0d-492357fe8c29" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Models/Budget.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Models/Expense.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Models/Income.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Models/Reminder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Models/Transaction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data/budgets.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data/expense.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data/income.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data/users.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/notifications/ConsoleNotifier.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/notifications/Notifier.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/services/AuthService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/services/BudgetService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/services/ExpenseService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/services/FileStorage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/services/IncomeService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/services/ReminderService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/services/TransactionFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/strategies/BudgetAnalysisStrategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/strategies/MonthlyAnalysis.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/strategies/YearlyAnalysis.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/User.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 0
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "Ahmedyehia60"
+  }
 }]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/Ahmedyehia60/Personal-budgut.git",
+    "accountId": "d12b4668-e44e-47b6-80a2-b6b2f5a54661"
+  }
+}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
   <component name="ProjectId" id="2wmdtkrQgigpRLC4rCOP0q6ZFFU" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -21,13 +68,33 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.Main.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/FCAI/Personal budgut",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="Personal budgut" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -45,6 +112,7 @@
       <option name="presentableId" value="Default" />
       <updated>1746650903122</updated>
       <workItem from="1746650904311" duration="6000" />
+      <workItem from="1746705474382" duration="5709000" />
     </task>
     <servers />
   </component>
