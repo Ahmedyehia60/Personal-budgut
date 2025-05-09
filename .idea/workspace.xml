@@ -4,31 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2efd800f-780f-4083-8e0d-492357fe8c29" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Models/Budget.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Models/Expense.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Models/Income.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Models/Reminder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Models/Transaction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/budgets.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/expense.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/income.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/users.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/notifications/ConsoleNotifier.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/notifications/Notifier.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/services/AuthService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/services/BudgetService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/services/ExpenseService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/services/FileStorage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/services/IncomeService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/services/ReminderService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/services/TransactionFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/strategies/BudgetAnalysisStrategy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/strategies/MonthlyAnalysis.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/strategies/YearlyAnalysis.java" afterDir="false" />
+    <list default="true" id="2efd800f-780f-4083-8e0d-492357fe8c29" name="Changes" comment="all file we need and the code for auth and user details">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Models/Budget.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/Budget.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/BudgetService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/BudgetService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,18 +25,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "Ahmedyehia60"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Ahmedyehia60&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/Ahmedyehia60/Personal-budgut.git",
-    "accountId": "d12b4668-e44e-47b6-80a2-b6b2f5a54661"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Ahmedyehia60/Personal-budgut.git&quot;,
+    &quot;accountId&quot;: &quot;d12b4668-e44e-47b6-80a2-b6b2f5a54661&quot;
   }
-}]]></component>
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
 }</component>
@@ -66,21 +46,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Main.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/FCAI/Personal budgut",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/FCAI/Personal budgut&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
@@ -112,11 +92,25 @@
       <option name="presentableId" value="Default" />
       <updated>1746650903122</updated>
       <workItem from="1746650904311" duration="6000" />
-      <workItem from="1746705474382" duration="5709000" />
+      <workItem from="1746705474382" duration="6472000" />
+      <workItem from="1746789218655" duration="1094000" />
     </task>
+    <task id="LOCAL-00001" summary="all file we need and the code for auth and user details">
+      <option name="closed" value="true" />
+      <created>1746711334263</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1746711334263</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="all file we need and the code for auth and user details" />
+    <option name="LAST_COMMIT_MESSAGE" value="all file we need and the code for auth and user details" />
   </component>
 </project>
