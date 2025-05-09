@@ -1,8 +1,11 @@
-import Models.User;
 import Models.Budget;
+import Models.User;
+import Models.Expense;
 import services.AuthService;
 import services.BudgetService;
+import services.ExpenseService;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Scanner;
 
@@ -10,6 +13,7 @@ public class Main {
     public static void main(String[] args) {
         AuthService authService = new AuthService();
         BudgetService budgetService = new BudgetService();
+        ExpenseService expenseService = new ExpenseService();
         Scanner scanner = new Scanner(System.in);
         User currentUser = null;
 
@@ -74,10 +78,14 @@ public class Main {
                     default:
                         System.out.println("Invalid choice.");
                 }
+
             } else {
+                System.out.println("\n--- Logged In Menu ---");
                 System.out.println("1. Add Budget");
                 System.out.println("2. View Budgets");
-                System.out.println("3. Logout");
+                System.out.println("3. Add Expense");
+                System.out.println("4. View Expenses");
+                System.out.println("5. Logout");
                 System.out.print("Choose option: ");
                 String choice = scanner.nextLine();
 
@@ -85,7 +93,6 @@ public class Main {
                     case "1":
                         System.out.print("Enter budget category: ");
                         String category = scanner.nextLine();
-
                         System.out.print("Enter budget limit: ");
                         double limit = Double.parseDouble(scanner.nextLine());
 
@@ -102,6 +109,39 @@ public class Main {
                         break;
 
                     case "3":
+                        System.out.print("Enter expense category: ");
+                        String expCategory = scanner.nextLine();
+                        System.out.print("Enter amount: ");
+                        double expAmount = Double.parseDouble(scanner.nextLine());
+                        LocalDate expDate = LocalDate.now();
+
+                        expenseService.addExpense(expCategory, expAmount, expDate);
+                        System.out.println("Expense added.");
+
+                        // Budget check
+                        Budget matchedBudget = budgetService.getBudgetByCategory(expCategory);
+                        if (matchedBudget != null) {
+                            double totalSpent = expenseService.getTotalExpenseForCategory(expCategory);
+                            if (totalSpent > matchedBudget.getLimitAmount()) {
+                                System.out.println("⚠️ Warning: You exceeded the budget for '" + expCategory + "'!");
+                            } else {
+                                double remaining = matchedBudget.getLimitAmount() - totalSpent;
+                                System.out.println("✅ Remaining budget for '" + expCategory + "': " + remaining);
+                            }
+                        } else {
+                            System.out.println("Note: No budget limit set for this category.");
+                        }
+                        break;
+
+                    case "4":
+                        List<Expense> expenses = expenseService.getAllExpenses();
+                        System.out.println("\n=== Your Expenses ===");
+                        for (Expense e : expenses) {
+                            System.out.println("- " + e.getCategory() + ": " + e.getAmount() + " on " + e.getDate());
+                        }
+                        break;
+
+                    case "5":
                         currentUser = null;
                         System.out.println("Logged out.");
                         break;

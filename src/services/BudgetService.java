@@ -25,6 +25,15 @@ public class BudgetService {
         return budgets;
     }
 
+    public Budget getBudgetByCategory(String category) {
+        for (Budget b : budgets) {
+            if (b.getCategory().equalsIgnoreCase(category)) {
+                return b;
+            }
+        }
+        return null;
+    }
+
     private void loadBudgetsFromFile() {
         File file = new File(FILE_PATH);
         if (!file.exists()) return;
