@@ -1,13 +1,13 @@
 import Models.Budget;
 import Models.User;
 import Models.Expense;
-import services.AuthService;
-import services.BudgetService;
-import services.ExpenseService;
+import Models.Income;
+import services.*;
+import strategies.MonthlyAnalysis;
+import strategies.YearlyAnalysis;
 
 import Models.Reminder;
 import notifications.ConsoleNotifier;
-import services.ReminderService;
 
 import java.time.LocalDateTime;
 import java.time.LocalDate;
@@ -20,8 +20,6 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         AuthService authService = new AuthService();
-        BudgetService budgetService = new BudgetService();
-        ExpenseService expenseService = new ExpenseService();
         ReminderService reminderService = new ReminderService();
         ConsoleNotifier notifier = new ConsoleNotifier();
         Scanner scanner = new Scanner(System.in);
@@ -92,14 +90,24 @@ public class Main {
                 }
 
             } else {
+                BudgetService budgetService = new BudgetService(currentUser);
+                ExpenseService expenseService = new ExpenseService(currentUser);
+                IncomeService incomeService = new IncomeService(currentUser);
+                List<Income> incomes = incomeService.getAllIncomes();
+                List<Expense> expenses = expenseService.getAllExpenses();
+
                 System.out.println("\n--- Logged In Menu ---");
                 System.out.println("1. Add Budget");
                 System.out.println("2. View Budgets");
                 System.out.println("3. Add Expense");
-                System.out.println("4. View Expenses");
-                System.out.println("5. Add Reminder");
-                System.out.println("6. View Reminders");
-                System.out.println("7. Logout");
+                System.out.println("4. Add Income");
+                System.out.println("5. View Expenses");
+                System.out.println("6. View Incomes");
+                System.out.println("7. Add Reminder");
+                System.out.println("8. View Reminders");
+                System.out.println("9. Monthly Analysis");
+                System.out.println("10. Yearly Analysis");
+                System.out.println("11. Logout");
                 System.out.print("Choose option: ");
                 String choice = scanner.nextLine();
 
@@ -110,7 +118,7 @@ public class Main {
                         System.out.print("Enter budget limit: ");
                         double limit = Double.parseDouble(scanner.nextLine());
 
-                        budgetService.addBudget(category, limit);
+                        budgetService.addBudget(category, limit, currentUser);
                         System.out.println("Budget added successfully.");
                         break;
 
@@ -129,7 +137,7 @@ public class Main {
                         double expAmount = Double.parseDouble(scanner.nextLine());
                         LocalDate expDate = LocalDate.now();
 
-                        expenseService.addExpense(expCategory, expAmount, expDate);
+                        expenseService.addExpense(expCategory, expAmount, expDate, currentUser);
                         System.out.println("Expense added.");
 
                         Budget matchedBudget = budgetService.getBudgetByCategory(expCategory);
@@ -147,14 +155,31 @@ public class Main {
                         break;
 
                     case "4":
-                        List<Expense> expenses = expenseService.getAllExpenses();
+                        System.out.print("Enter income category: ");
+                        String incomeCategory = scanner.nextLine();
+                        System.out.print("Enter amount: ");
+                        double incomeAmount = Double.parseDouble(scanner.nextLine());
+                        LocalDate incomeDate = LocalDate.now();
+
+                        incomeService.addIncome(incomeCategory, incomeAmount, incomeDate, currentUser);
+                        System.out.println("Income added.");
+                        break;
+
+                    case "5":
                         System.out.println("\n=== Your Expenses ===");
                         for (Expense e : expenses) {
                             System.out.println("- " + e.getCategory() + ": " + e.getAmount() + " on " + e.getDate());
                         }
                         break;
 
-                    case "5":
+                    case "6":
+                        System.out.println("\n=== Your Incomes ===");
+                        for (Income i : incomes) {
+                            System.out.println("- " + i.getCategory() + ": " + i.getAmount() + " on " + i.getDate());
+                        }
+                        break;
+
+                    case "7":
                         System.out.print("Enter reminder message: ");
                         String message = scanner.nextLine();
 
@@ -202,7 +227,7 @@ public class Main {
                         }
                         break;
 
-                    case "6":
+                    case "8":
                         List<Reminder> reminders = reminderService.getRemindersForUser(currentUser.getUsername());
                         System.out.println("\n=== Your Reminders ===");
                         if (reminders.isEmpty()) {
@@ -214,7 +239,19 @@ public class Main {
                         }
                         break;
 
-                    case "7":
+                    case "9":
+                        MonthlyAnalysis monthlyAnalysis = new MonthlyAnalysis();
+                        System.out.println("\n=== Monthly Analysis ===");
+                        monthlyAnalysis.analysis(currentUser, incomes, expenses);
+                        break;
+
+                    case "10":
+                        YearlyAnalysis yearlyAnalysis = new YearlyAnalysis();
+                        System.out.println("\n=== Yearly Analysis ===");
+                        yearlyAnalysis.analysis(currentUser, incomes, expenses);
+                        break;
+
+                    case "11":
                         currentUser = null;
                         System.out.println("Logged out.");
                         break;

@@ -1,1 +1,3 @@
-Expense,food,300.0,2025-05-09
+Mohamed,Expense,food,1500.0,2024-05-12
+ahmed,Expense,Food,3000.0,2025-05-12
+Mohamed,Expense,Electricity,1000.0,2025-05-12

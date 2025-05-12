@@ -6,11 +6,13 @@ public abstract class Transaction {
     protected String category;
     protected double amount;
     protected LocalDate date;
+    protected User user;
 
-    public Transaction(String category, double amount, LocalDate date) {
+    public Transaction(String category, double amount, LocalDate date, User user) {
         this.category = category;
         this.amount = amount;
         this.date = date;
+        this.user = user;
     }
 
     public String getCategory() {
@@ -23,6 +25,10 @@ public abstract class Transaction {
 
     public LocalDate getDate() {
         return date;
+    }
+
+    public String getUsername() {
+        return user.getUsername();
     }
 
     // Template method (can be overridden)

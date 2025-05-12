@@ -5,10 +5,12 @@ package Models;
 public class Budget {
     private String category;
     private double limitAmount;
+    private User user;
 
-    public Budget(String category, double limitAmount) {
+    public Budget(String category, double limitAmount, User user) {
         this.category = category;
         this.limitAmount = limitAmount;
+        this.user = user;
     }
 
     public String getCategory() {
@@ -33,11 +35,11 @@ public class Budget {
     }
 
     // Load Budget from a CSV string
-    public static Budget fromCSV(String line) {
+    public static Budget fromCSV(String line, User user) {
         String[] parts = line.split(",");
-        if (parts.length != 2) return null;
-        String category = parts[0];
-        double amount = Double.parseDouble(parts[1]);
-        return new Budget(category, amount);
+        if (parts.length != 3) return null;
+        String category = parts[1];
+        double amount = Double.parseDouble(parts[2]);
+        return new Budget(category, amount, user);
     }
 }

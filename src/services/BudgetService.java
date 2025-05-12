@@ -1,6 +1,7 @@
 package services;
 
 import Models.Budget;
+import Models.User;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -10,15 +11,15 @@ public class BudgetService {
     private final String FILE_PATH = "src/data/budgets.txt";
     private List<Budget> budgets;
 
-    public BudgetService() {
+    public BudgetService(User user) {
         budgets = new ArrayList<>();
-        loadBudgetsFromFile();
+        loadBudgetsFromFile(user);
     }
 
-    public void addBudget(String category, double amount) {
-        Budget budget = new Budget(category, amount);
+    public void addBudget(String category, double amount, User user) {
+        Budget budget = new Budget(category, amount, user);
         budgets.add(budget);
-        saveBudgetToFile(budget);
+        saveBudgetToFile(budget, user);
     }
 
     public List<Budget> getAllBudgets() {
@@ -34,16 +35,18 @@ public class BudgetService {
         return null;
     }
 
-    private void loadBudgetsFromFile() {
+    private void loadBudgetsFromFile(User user) {
         File file = new File(FILE_PATH);
         if (!file.exists()) return;
 
         try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
             String line;
             while ((line = reader.readLine()) != null) {
-                Budget budget = Budget.fromCSV(line);
-                if (budget != null) {
-                    budgets.add(budget);
+                if (line.startsWith(user.getUsername())) {
+                    Budget budget = Budget.fromCSV(line, user);
+                    if (budget != null) {
+                        budgets.add(budget);
+                    }
                 }
             }
         } catch (IOException e) {
@@ -51,8 +54,9 @@ public class BudgetService {
         }
     }
 
-    private void saveBudgetToFile(Budget budget) {
+    private void saveBudgetToFile(Budget budget, User user) {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(FILE_PATH, true))) {
+            writer.write(user.getUsername() + ",");
             writer.write(budget.toCSV());
             writer.newLine();
         } catch (IOException e) {
