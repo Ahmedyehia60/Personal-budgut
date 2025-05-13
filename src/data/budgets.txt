@@ -1,1 +1,3 @@
-food,10000.0
+Mohamed,Food,10000.0
+Mohamed,Rent,2000.0
+ahmed,Food,20000.0
